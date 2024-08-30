@@ -10,8 +10,8 @@ export default async function main() {
   const result = clipboardContent.text
     .replace(/(DEV|TESTDOME)-[\d]+\s?/, '')
     .split(";")
-    .map((item) => `- ${item}`)
-    .join("\n\n");
+    .map((item) => `- ${item.trim()}`)
+    .join("\n");
 
   await Clipboard.copy(result);
 
